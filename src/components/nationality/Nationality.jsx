@@ -89,7 +89,7 @@ function Nationality() {
           </div>
         ))}
         </div>
-        {message&&<p   className="text-xl font-bold text-pink-500 text-center">{message}</p>}
+        {message&&<p className="text-xl font-bold text-pink-500 text-center mt-10">{message}</p>}
         <CardsParent category={"International Escorts"} Escorts={recommendedEscorts}/>
       </div>
     </>

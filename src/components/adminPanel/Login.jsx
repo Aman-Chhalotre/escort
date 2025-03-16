@@ -7,7 +7,7 @@ import Cookies from 'js-cookie'
 function Login() {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const [email, setEmail] = useState("");
+  const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -41,12 +41,12 @@ function Login() {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await AxiosPost(`/api/users/login`, { email, password }, { withCredentials: true });
+      const response = await AxiosPost(`/api/users/login`, { username, password }, { withCredentials: true });
   
       if (response.status == "Success") {
         setSuccessMessage(response.data.message);
         setErrorMessage("");
-        setEmail("");
+        setUserName("");
         setPassword("");
   
         // ✅ Check if the token is set before redirecting
@@ -71,15 +71,15 @@ function Login() {
           <form onSubmit={handleLoginSubmit} className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Email
+                User Name
               </label>
               <input
-                type="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                name="username"
+                value={username}
+                onChange={(e) => setUserName(e.target.value)}
                 className="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                placeholder="Enter your Email"
+                placeholder="Enter your User Name"
               />
             </div>
             <div>

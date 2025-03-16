@@ -59,7 +59,7 @@ function Fetish() {
         {fetish.map((service, index) => (
           <span
             key={index}
-            className="bg-pink-500 hover:bg-pink-400 duration-300 text-white font-semibold px-4 py-2 rounded-full text-sm shadow-md"
+            className="bg-pink-500 hover:bg-pink-400 duration-300 text-white font-semibold px-4 py-2 rounded-full text-sm shadow-md cursor-pointer"
             onClick={()=>{handleClick(service)}}
           >
             {service}

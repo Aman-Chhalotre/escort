@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CardsParent from "../cards-parent/CardsParent";
 import { AxiosFetch } from "../../apiCall/ApiCall";
 import { Link } from "react-router-dom";
+import useEscort from "../../context/useEscortContext";
 
 function Locations() {
   const [location, setLocation] = useState({});
@@ -29,6 +30,20 @@ function Locations() {
   //     .catch((error) => console.error("Error fetching IP:", error));
   // }, []);
 
+  const {escorts} = useEscort();
+
+  
+  useEffect(() => {
+
+    if (escorts?.length > 0) {
+      const shuffled = [...escorts] // Copy array to avoid mutation
+        .sort(() => 0.5 - Math.random()) // Shuffle array
+        .slice(0, 12); // Take first 12 items
+
+      setLocalEscorts(shuffled);
+    }
+  }, [escorts]); 
+
   useEffect(()=>{
     const response = AxiosFetch(`/api/escorts/filter?${location}=${encodeURIComponent(location)}`)
     if(response.data){
@@ -36,7 +51,7 @@ function Locations() {
     }
   },[location])
 
-  const escorts = [
+  const section = [
     {
       image: "/images/central-london.webp",
       location: "Palma",
@@ -213,7 +228,7 @@ function Locations() {
           Local Escorts Near Me
         </h1>
         <div className=" space-y-32">
-          {escorts.map((escort, index) => (
+          {section.map((escort, index) => (
             <div key={index}>
               <Card escort={escort} />
             </div>

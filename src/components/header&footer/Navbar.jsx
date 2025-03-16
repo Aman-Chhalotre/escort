@@ -39,11 +39,11 @@ const Navbar = () => {
     // },
     {
       name: "COMMON",
-      route: "/common",
+      route: "/",
     },
     {
       name: "OTHER",
-      route: "/other",
+      route: "/",
     },
   ];
 

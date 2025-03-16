@@ -92,7 +92,7 @@ function Profile() {
             </div>
 
             {/* Center Panel - Profile Image */}
-            <div className="flex flex-col items-center bg-white">
+            <div className="flex flex-col items-center">
               <div className="flex items-center gap-2">
                 <button className="text-5xl" onClick={handlePrev}>
                   <IoIosArrowBack />
@@ -221,13 +221,13 @@ function Profile() {
             <div className="w-full max-h-96 md:w-[400px] bg-white p-4 rounded-lg shadow-lg">
               <h2 className="text-pink-500 font-bold text-lg text-center mb-3">
                 <span className="underline">Areas where</span> {data.name}{" "}
-                available
+                available 
               </h2>
-              {/* <div className="grid grid-cols-2 gap-2 text-black text-sm font-semibold">
+              <div className="grid grid-cols-2 gap-2 text-black text-sm font-semibold">
                 <p className="flex items-center">
-                  <span className="text-pink-500 mr-2">✦</span> Bayswater
+                  <span className="text-pink-500 mr-2">✦</span> {data.location}
                 </p>
-                <p className="flex items-center">
+                {/* <p className="flex items-center">
                   <span className="text-pink-500 mr-2">✦</span> Mayfair
                 </p>
                 <p className="flex items-center">
@@ -247,8 +247,8 @@ function Profile() {
                 </p>
                 <p className="flex items-center">
                   <span className="text-pink-500 mr-2">✦</span> Tulse Hill
-                </p>
-              </div> */}
+                </p> */}
+              </div>
             </div>
           </div>
           <CardsParent

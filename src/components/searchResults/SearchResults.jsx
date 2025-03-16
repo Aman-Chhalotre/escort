@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 
 function SearchResults() {
     const [SearchResultsEscorts, setServicesEscorts] = useState();
+    const [resultService, setResultService] = useState();
     const [message, setMessage] = useState()
     
     const location = useLocation();
@@ -39,9 +40,11 @@ function SearchResults() {
       const response = await AxiosFetch(`/api/escorts/filter?${params.toString()}`)
       if(response.escorts){
         setServicesEscorts(response.escorts)
+        setMessage()
+        setResultService(service)
       } else {
         console.log(response.message)
-        setServicesEscorts(response.message)
+        setServicesEscorts()
         setMessage(response.message)
       }
     }
@@ -61,7 +64,7 @@ function SearchResults() {
         ))}
       </div>
       {message&&<h1 className="text-3xl font-bold text-pink-500">{message}</h1>}
-      {SearchResultsEscorts.length &&(<CardsParent category={"Palma Escort Services"} Escorts={SearchResultsEscorts}/>)}
+      {SearchResultsEscorts?.length > 0 &&(<CardsParent category={`${resultService} Escort Services`} Escorts={SearchResultsEscorts}/>)}
 
       {/* <div className=" text-white h-[400px] overflow-auto leading-7">
         <h1 className="text-pink-500 text-xl font-bold">

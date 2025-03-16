@@ -59,8 +59,8 @@ function Footer() {
             <li>📞 37254619674</li>
             <li>✉ @ESCORT_PALMA</li>
             <li>📩 INFO@ESCORT-PALMA.COM</li>
-            <li>📺 ESCORT-CLUB</li>
-            <li>🐦 ESCORTCLUBUK</li>
+            <li>📺 ESCORT-Palma</li>
+            <li>🐦 ESCORTPALMA</li>
           </ul>
           <div className="mt-3">
             <span className="bg-green-500 text-xs px-2 py-1 rounded">DMCA PROTECTED</span>

@@ -60,7 +60,7 @@ function Services() {
           <div key={index}>
           <span
             key={index}
-            className="bg-pink-500 hover:bg-pink-400 duration-300 text-white font-semibold md:px-4 px-2 md:py-2 py-1 rounded-full md:text-sm text-xs shadow-md"
+            className="bg-pink-500 hover:bg-pink-400 duration-300 text-white font-semibold md:px-4 px-2 md:py-2 py-1 rounded-full md:text-sm text-xs shadow-md cursor-pointer"
             onClick={()=>{handleClick(service)}}
           >
             {service}
