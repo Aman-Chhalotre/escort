@@ -14,11 +14,11 @@ export default function Card({ escort }) {
           onMouseLeave={()=>setZIndex(20)}
         >
           <img
-            src={escort.image}
+            src={escort.profile_photo}
             alt={escort.name}
             className={`object-cover h-[317px] absolute rounded-lg z-${zIndex}`}
           />
-          <video src={escort.video} autoPlay={true} muted={true} className="object-cover rounded-lg relative h-[317px]"></video>
+          <video src={escort.videos} autoPlay={true} muted={true} className="object-cover rounded-lg relative h-[317px]"></video>
           
           <div className="absolute top-2 left-2  p-1 rounded-full bg-[#00000096] text-white text-[11px] font-medium z-20">{escort.suggestion}</div>
           <div className="absolute top-1.5 right-2  p-2 rounded-full z-20">❤️</div>
@@ -46,15 +46,11 @@ export default function Card({ escort }) {
             <li className="flex items-center justify-between md:text-lg text-sm gap-1">
               <strong><span className="text-[10px]">➕ </span>Chest : </strong> <span className="font-bold">{escort.chest}</span>
             </li>
-            <li className="flex items-center justify-between md:text-lg text-sm gap-1">
-              <strong><span className="text-[10px]">➕ </span>1 hour : </strong> <span className="font-bold">{escort.priceOneHour}</span>
-            </li>
-            <li className="flex items-center justify-between md:text-lg text-sm gap-1">
-              <strong><span className="text-[10px]">➕ </span>2 hours : </strong> <span className="font-bold">{escort.priceTwoHour}</span>
-            </li>
-            <li className="flex items-center justify-between md:text-lg text-sm gap-1">
-              <strong><span className="text-[10px]">➕ </span>4 hours : </strong> <span className="font-bold">{escort.priceFourHour}</span>
-            </li>
+            {escort.rates.map((item, index)=>(
+              <li className="flex items-center justify-between md:text-lg text-sm gap-1" key={index}>
+                <strong><span className="text-[10px]">➕ </span>{item.hours}</strong> <span className="font-bold">{item.rate}</span>
+              </li>
+            )).slice(0,4)}
             
           </ul>
           <h2 className="text-base font-bold text-pink-700">{escort.location}</h2>

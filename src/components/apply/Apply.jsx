@@ -297,7 +297,7 @@ const Apply = () => {
         <h3 className="text-lg font-semibold mt-4">Select Services</h3>
         <div className="grid grid-cols-2 gap-2 text-sm">
         {servicesList.map((service) => (
-          <label key={service}>
+          <label key={service} className="text-[16px]">
             <input type="checkbox" checked={formData.services.includes(service)} onChange={() => handleServiceChange(service)} />
             {service}
           </label>

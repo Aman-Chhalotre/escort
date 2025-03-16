@@ -4,7 +4,7 @@
 
 /* For WebKit Browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
   }
   
   ::-webkit-scrollbar-track {
@@ -14,10 +14,30 @@
   
   ::-webkit-scrollbar-thumb {
     background: #ff4dc4; /* Pink */
-    border-radius: 10px;
+    border-radius: 8px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
+    background: #ff1ba6;
+  }
+
+
+  .photoSection::-webkit-scrollbar {
+    width: 2px;
+    height: 8px;
+  }
+  
+ .photoSection::-webkit-scrollbar-track {
+    background: #5e2a84; /* Purple */
+    border-radius: 10px;
+  }
+  
+  .photoSection::-webkit-scrollbar-thumb {
+    background: #ff4dc4; /* Pink */
+    border-radius: 8px;
+  }
+  
+  .photoSection ::-webkit-scrollbar-thumb:hover {
     background: #ff1ba6;
   }
   

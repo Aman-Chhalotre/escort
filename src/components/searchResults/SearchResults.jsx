@@ -41,7 +41,7 @@ function SearchResults() {
         setServicesEscorts(response.escorts)
       } else {
         console.log(response.message)
-        setServicesEscorts([response.message])
+        setServicesEscorts(response.message)
         setMessage(response.message)
       }
     }
@@ -60,8 +60,8 @@ function SearchResults() {
           </span>
         ))}
       </div>
-      {SearchResultsEscorts&&(<CardsParent category={"London Escort Services"} Escorts={SearchResultsEscorts}/>)}
-      
+      {message&&<h1 className="text-3xl font-bold text-pink-500">{message}</h1>}
+      {SearchResultsEscorts.length &&(<CardsParent category={"London Escort Services"} Escorts={SearchResultsEscorts}/>)}
 
       {/* <div className=" text-white h-[400px] overflow-auto leading-7">
         <h1 className="text-pink-500 text-xl font-bold">

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function Services() {
       const [servicesEscorts, setServicesEscorts] = useState();
+      const [message, setMessage] = useState('')
       const navigate = useNavigate()
     
       const {escorts} = useEscort();
@@ -46,11 +47,14 @@ function Services() {
       navigate(`/searchResults/${service}`, {
         state : {data : response.escorts}
       })
-    }
+    } else if(response.message){
+      setMessage(response.message)
+     }
   }
 
   return (
     <>
+    {message&&<h1 className="text-3xl font-bold text-pink-500">{message}</h1>}
       <div className="flex flex-wrap gap-3 p-4 bg-gradient-to-r from-purple-700 to-purple-900 rounded-lg">
         {services.map((service, index) => (
           <div key={index}>

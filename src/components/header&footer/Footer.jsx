@@ -9,7 +9,7 @@ function Footer() {
         <div>
           <h2 className="text-red-500 text-2xl font-bold">ESCORT PALMA</h2>
           <p className="mt-3 text-sm">
-            LONDON'S #1 ESCORT AGENCY OFFERS HIGH-CLASS FEMALE ESCORTS FOR ANY OCCASION,
+          PALMA'S #1 ESCORT AGENCY OFFERS HIGH-CLASS FEMALE ESCORTS FOR ANY OCCASION,
             AVAILABLE 24/7 TO FULFILL YOUR DESIRES WITH UNRIVALED ELEGANCE.
           </p>
           <p className="mt-2 font-bold">ADDRESS:</p>
@@ -29,7 +29,7 @@ function Footer() {
             <li>Privacy Policy</li>
             <li>Cookies Policy</li>
             <li>Refund Policy</li>
-            <li>London Escort Jobs</li>
+            <li>PALMA Escort Jobs</li>
             <li>Sitemap</li>
           </ul>
         </div>
@@ -57,9 +57,8 @@ function Footer() {
           <ul className="mt-2 space-y-1 text-sm">
             <li>📞 37254619660</li>
             <li>📞 37254619674</li>
-            <li>✉ @ESCORT_CLUB_LONDON</li>
-            <li>✉ @LONDON_CLUB_Y</li>
-            <li>📩 INFO@ESCORT-CLUB.COM</li>
+            <li>✉ @ESCORT_PALMA</li>
+            <li>📩 INFO@ESCORT-PALMA.COM</li>
             <li>📺 ESCORT-CLUB</li>
             <li>🐦 ESCORTCLUBUK</li>
           </ul>
@@ -71,7 +70,7 @@ function Footer() {
       
       {/* Footer Bottom */}
       <div className="text-center text-xs mt-6 border-t border-gray-500 pt-3">
-        © Escort Club 2025. All rights reserved. <br />
+        © Escort PALMA 2025. All rights reserved. <br />
         Escort Club is strictly an adult-only website. All visitors must be 18 years of age or older. If you are under 18, please leave this site immediately.
       </div>
     </footer>

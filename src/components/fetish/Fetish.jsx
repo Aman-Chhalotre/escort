@@ -4,21 +4,6 @@ import useEscort from "../../context/useEscortContext";
 import { AxiosFetch } from "../../apiCall/ApiCall";
 
 function Fetish() {
-  const [recommendedEscorts, setRecommendedEscorts] = useState();
-  
-    const {escorts} = useEscort();
-  
-    
-    useEffect(() => {
-      if (escorts.length > 0) {
-        const shuffled = [...escorts] // Copy array to avoid mutation
-          .sort(() => 0.5 - Math.random()) // Shuffle array
-          .slice(0, 20); // Take first 20 items
-  
-        setRecommendedEscorts(shuffled);
-      }
-    }, [escorts]); 
-
   const fetish = [
     "Face sitting",
     "Footjob",
@@ -34,17 +19,42 @@ function Fetish() {
     "Deepthroat",
     "Domination",
   ];
+  const [recommendedEscorts, setRecommendedEscorts] = useState();
+  const [message, setMessage] = useState('')
+  
+    const {escorts} = useEscort();
+  
+    
+    useEffect(() => {
+      if (escorts.length > 0) {
+        const shuffled = [...escorts] // Copy array to avoid mutation
+          .sort(() => 0.5 - Math.random()) // Shuffle array
+          .slice(0, 20); // Take first 20 items
+  
+        setRecommendedEscorts(shuffled);
+      }
+    }, [escorts]); 
 
-  const handleClick = (service) =>{
-    const response = AxiosFetch(`/api/escorts/filter?service=${encodeURIComponent(service)}`)
-    if (response.data){
-      setRecommendedEscorts(response.data)
-    }
+  
+
+  const handleClick = async (service) =>{
+    const params = new URLSearchParams({
+      service : service
+    })
+    const response = await AxiosFetch(`/api/escorts/filter?${params.toString()}`)
+    if(response.escorts){
+      console.log(response.escorts)
+      navigate(`/searchResults/${service}`, {
+        state : {data : response.escorts}
+      })
+    } else if(response.message){
+      setMessage(response.message)
+     }
   }
-
 
   return (
     <>
+    {message&&<h1 className="text-3xl font-bold text-pink-500">{message}</h1>}
       <div className="flex flex-wrap gap-3 p-4 bg-gradient-to-r from-purple-700 to-purple-900 rounded-lg">
         {fetish.map((service, index) => (
           <span
