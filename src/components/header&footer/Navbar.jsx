@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaWhatsapp, FaTelegramPlane, FaYoutube } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Breadcrumb from "../BreadCrumb";
 
 const Navbar = () => {
@@ -107,12 +107,13 @@ const Navbar = () => {
           <a href="#" className="hover:text-gray-300">
             <FaWhatsapp size={24} />
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <Link to={"/admin"} className="bg-purple-500 px-2 rounded-lg ">Admin</Link>
+          {/* <a href="#" className="hover:text-gray-300">
             <FaTelegramPlane size={24} />
           </a>
           <a href="#" className="hover:text-gray-300">
             <FaYoutube size={24} />
-          </a>
+          </a> */}
 
           <button onClick={toggleDrawer(true)} className="lg:hidden block pl-3">
             <FiMenu className="text-2xl" />
