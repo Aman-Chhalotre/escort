@@ -68,7 +68,7 @@ function Services() {
           </div>
         ))}
       </div>
-      <CardsParent category={"London Escort Services"} Escorts={servicesEscorts}/>
+      <CardsParent category={"Palma Escort Services"} Escorts={servicesEscorts}/>
 
       <div className=" text-white h-[400px] overflow-auto leading-7">
         <h1 className="text-pink-500 text-xl font-bold">
@@ -119,7 +119,7 @@ function Services() {
           booking a particular service. We will be glad to tell you about all
           our responsibilities as well as yours. We do respect all our customers
           and expect the same. All these principles help us to be on the list of
-          top escort service agencies in London.
+          top escort service agencies in Palma.
         </p>
 
         <h1 className="text-pink-500 text-xl font-bold">
@@ -128,7 +128,7 @@ function Services() {
         <div className="border-b-4 border-pink-500 rounded-2xl w-52 mt-1"></div>
         <p>
           Of course, it can be problematic to understand everything at once,
-          especially if you have never searched for escort services in London.
+          especially if you have never searched for escort services in Palma.
           But that is what we are for - we are an experienced company that will
           do everything for you. <br />
           The two most popular services of our agency are incall and outcall

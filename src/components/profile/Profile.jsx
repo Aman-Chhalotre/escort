@@ -56,7 +56,7 @@ function Profile() {
   return (
     <>
       <div>
-        <div className="min-h-screen bg-purple-900 text-white flex items-center justify-center p-6">
+        <div className="min-h-screen bg-purple-900 text-white flex items-center justify-center sm:p-6 p-1">
           <div className="grid lg:grid-cols-3 gap-5 max-w-6xl w-full ">
             {/* Left Panel - Parameters */}
             <div className="bg-white text-black p-6 rounded-xl shadow-lg">
@@ -78,7 +78,7 @@ function Profile() {
                   <strong>Chest:</strong> {data.chest}
                 </li>
                 <li>
-                  <strong>Nationality:</strong> {`${data.country}n`}
+                  <strong>Nationality:</strong> {`${data.country}`}
                 </li>
                 <li>
                   <strong>Available for:</strong>{" "}
@@ -92,7 +92,7 @@ function Profile() {
             </div>
 
             {/* Center Panel - Profile Image */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center bg-white">
               <div className="flex items-center gap-2">
                 <button className="text-5xl" onClick={handlePrev}>
                   <IoIosArrowBack />
@@ -100,7 +100,7 @@ function Profile() {
                 {assets[currentIndex].includes(".mp4") ? (
                   <video
                     src={assets[currentIndex]}
-                    className="rounded-xl shadow-lg object-fill w-[250px] h-[400px] ease-in duration-200"
+                    className="rounded-xl shadow-lg object-fill sm:w-[250px] w-[200px] sm:h-[400px] h-[350px] ease-in duration-200"
                     autoPlay
                     controls
                   />
@@ -108,7 +108,7 @@ function Profile() {
                   <img
                     src={assets[currentIndex]}
                     alt="Profile"
-                    className="rounded-xl shadow-lg object-fill w-[250px] h-[400px] ease-in duration-200"
+                    className="rounded-xl shadow-lg object-fill sm:w-[250px] w-[200px] sm:h-[400px] h-[350px] ease-in duration-200"
                     draggable='false'
                   />
                 )}
@@ -118,11 +118,11 @@ function Profile() {
               </div>
 
               <div className="photoSection relative w-full overflow-x-auto mt-4 pb-2">
-                <div className="flex space-x-2 w-max px-4 " 
+                <div className="flex space-x-2 w-max px-4 justify-self-center" 
                  onTouchStart={handleTouchStart}
                  onTouchEnd={handleTouchEnd}>
                   {assets.map((asset, index) => (
-                    <div key={index} className="w-16 h-24">
+                    <div key={index} className="md:w-16 w-8 md:h-24 h-10">
                       {asset.includes(".mp4") ? (
                         <video
                           src={asset}
@@ -165,14 +165,14 @@ function Profile() {
               <ul className="text-sm mt-4">
                 {data.rates.map((rate) => (
                   <li>
-                    {rate.hours} hour: <strong>{rate.rate} £</strong>
+                    {rate.hours} hour: <strong>{rate.rate}  £</strong>
                   </li>
                 ))}
               </ul>
               <h2 className="text-pink-500 text-xl font-bold mt-4 underline">
                 Services
               </h2>
-              <div className=" w-[320px] ">
+              <div className=" sm:w-[320px] w-[250px]">
                 <p className="text-sm mt-2 font-bold h-28 overflow-y-scroll overflow-x-hidden break-words">
                   {data.services.map((service) => (
                     <span>
@@ -205,7 +205,7 @@ function Profile() {
           </div>
 
           {/* Content Sections */}
-          <div className="flex items-center justify-between gap-8 w-full max-w-6xl pb-10">
+          <div className="flex md:flex-row flex-col items-center justify-between gap-8 w-full max-w-6xl pb-10">
             {/* Left Box (Description) */}
             <div className="w-full md:w-[400px] bg-white p-4 text-sm rounded-lg shadow-lg max-h-[400px] overflow-y-auto">
               <h2 className="text-pink-500 font-bold text-xl text-center mb-3">

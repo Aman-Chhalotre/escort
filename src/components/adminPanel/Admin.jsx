@@ -12,7 +12,7 @@ const Admin = () => {
   useEffect(()=>{
     fetchData();
         async function fetchData() {
-          const data = await AxiosAdminFetch('/api/escorts/agent/all/escorts');
+          const data = await AxiosAdminFetch('/api/escorts/all');
           if(data){
             setApplications(data.escorts)
             console.log(data.escorts)
@@ -80,7 +80,7 @@ const Admin = () => {
         <tbody>
           {filteredApplications.map((app) => (
             <tr key={app.id} className="text-end ">
-              <td className=" p-2 flex items-center gap-5 min-w-[50px] text-white"><img src={app.image} className="h-24 w-20"/>{app.name}</td>
+              <td className=" p-2 flex items-center gap-5 min-w-[50px] text-white"><img src={app.profile_photo} className="h-24 w-20"/>{app.name}</td>
               <td className=" p-2 text-white">{app.location}</td>
               <td className={` p-2 capitalize ${app.status == "pending"&&"text-amber-400"} ${app.status =="approved"&&"text-green-500"} ${app.status=="rejected"&&"text-red-500"}`}>{app.status}</td>
               <td className=" p-2 w-52 space-x-2">

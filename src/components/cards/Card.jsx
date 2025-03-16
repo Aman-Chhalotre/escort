@@ -1,14 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Card({ escort }) {
   const [zIndex, setZIndex] = useState(20);
+  const [city, setCity] = useState("");
+  const [state, setState] = useState();
+
+  useEffect(() => {
+      fetch("https://api64.ipify.org?format=json")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("User's IP:", data.ip);
+          console.log("Country:", data.country);
+          fetch(`http://ip-api.com/json/${data.ip}`)
+            .then((response) => response.json())
+            .then((data) => { 
+              console.log("User's Location:", data);
+              console.log("City:", data.city);
+              setCity(data.city)
+              setState(data.regionName);
+              console.log("Country:", data.country);
+              console.log("Latitude:", data.lat);
+              console.log("Longitude:", data.lon);
+            })
+            .catch((error) => console.error("Error fetching location:", error));
+        })
+        .catch((error) => console.error("Error fetching IP:", error));
+
+    }, []); 
 
   return (
     <Link to={`/escorts/${escort.name}`} state={{
       ...escort
-    }} >
-      <div className="bg-[#DFB2B2] p-2 rounded-lg shadow-lg grid grid-cols-2">
+    }} className="">
+      <div className="bg-[#DFB2B2]  p-2 rounded-lg shadow-lg grid grid-cols-2">
         <div className="relative " 
           onMouseEnter={()=>setZIndex(0)}
           onMouseLeave={()=>setZIndex(20)}
@@ -50,10 +75,10 @@ export default function Card({ escort }) {
               <li className="flex items-center justify-between md:text-lg text-sm gap-1" key={index}>
                 <strong><span className="text-[10px]">➕ </span>{item.hours}</strong> <span className="font-bold">{item.rate}</span>
               </li>
-            )).slice(0,4)}
+            )).slice(0,2)}
             
           </ul>
-          <h2 className="text-base font-bold text-pink-700">{escort.location}</h2>
+          <h2 className="text-base font-bold text-pink-700">{city} ,{state}</h2>
         </div>
       </div>
     </Link>

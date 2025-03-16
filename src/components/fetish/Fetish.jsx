@@ -162,7 +162,7 @@ function Fetish() {
           <br />
           Sometimes varieties of fetish are combined. For example, latex is
           often used and implied when talking about BDSM aesthetics. BDSM
-          services in London are a special type of entertainment that has been
+          services in Palma are a special type of entertainment that has been
           in demand for many years.
         </p>
 

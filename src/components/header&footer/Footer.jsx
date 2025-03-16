@@ -14,7 +14,7 @@ function Footer() {
           </p>
           <p className="mt-2 font-bold">ADDRESS:</p>
           <p className="text-sm">
-            16 WARDOUR MEWS, LONDON W1F 8AP, UNITED KINGDOM
+            16 WARDOUR MEWS, Palma W1F 8AP, UNITED KINGDOM
             <br /> OPEN 24 HOURS A DAY
           </p>
         </div>

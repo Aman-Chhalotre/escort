@@ -26,7 +26,7 @@ function Escorts() {
             <input type="text" className='bg-transparent w-full border-none outline-none' placeholder='Search girl...'/>
             <IoMdSearch className='text-2xl text-gray-500'/>
           </div>
-            <CardsParent category={"High-Class Escorts in London"} Escorts={Escorts}/>
+            <CardsParent category={"High-Class Escorts in Palma"} Escorts={Escorts}/>
         </div>
     </>
   )

@@ -7,27 +7,27 @@ function Locations() {
   const [location, setLocation] = useState({});
   const [localEscorts, setLocalEscorts] = useState()
 
-  useEffect(() => {
-    fetch("https://api64.ipify.org?format=json")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("User's IP:", data.ip);
-        console.log("Country:", data.country);
-        fetch(`http://ip-api.com/json/${data.ip}`)
-          .then((response) => response.json())
-          .then((data) => {
-            setLocation(data);
-            console.log("User's Location:", data);
-            console.log("City:", data.city);
-            console.log("Region:", data.regionName);
-            console.log("Country:", data.country);
-            console.log("Latitude:", data.lat);
-            console.log("Longitude:", data.lon);
-          })
-          .catch((error) => console.error("Error fetching location:", error));
-      })
-      .catch((error) => console.error("Error fetching IP:", error));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://api64.ipify.org?format=json")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("User's IP:", data.ip);
+  //       console.log("Country:", data.country);
+  //       fetch(`http://ip-api.com/json/${data.ip}`)
+  //         .then((response) => response.json())
+  //         .then((data) => {
+  //           setLocation(data);
+  //           console.log("User's Location:", data);
+  //           console.log("City:", data.city);
+  //           console.log("Region:", data.regionName);
+  //           console.log("Country:", data.country);
+  //           console.log("Latitude:", data.lat);
+  //           console.log("Longitude:", data.lon);
+  //         })
+  //         .catch((error) => console.error("Error fetching location:", error));
+  //     })
+  //     .catch((error) => console.error("Error fetching IP:", error));
+  // }, []);
 
   useEffect(()=>{
     const response = AxiosFetch(`/api/escorts/filter?${location}=${encodeURIComponent(location)}`)
@@ -40,7 +40,7 @@ function Locations() {
     {
       image: "/images/central-london.webp",
       location: "Palma",
-      text: "Central London is the heart of the city, known for its vibrant culture, iconic landmarks and lively nightlife on every street. Local girls offer exceptional encounters to suit your preferences and vacation style. Wherever you go - Soho, Mayfair or Covent Garden - find experienced London escorts who will provide you with first-class service. Enjoy unforgettable moments with selected escort girls in Central London and let us guide you through each neighborhood.",
+      text: "Central Palma is the heart of the city, known for its vibrant culture, iconic landmarks and lively nightlife on every street. Local girls offer exceptional encounters to suit your preferences and vacation style. Wherever you go - Soho, Mayfair or Covent Garden - find experienced Palma escorts who will provide you with first-class service. Enjoy unforgettable moments with selected escort girls in Central Palma and let us guide you through each neighborhood.",
       locations: [
         "Aldgate",
         "Barbican",
@@ -178,7 +178,7 @@ function Locations() {
           <div className="relative w-full md:w-1/3">
             <img
               src={escort.image}
-              alt="London Night Scene"
+              alt="Palma Night Scene"
               className="h-full w-full rounded-lg shadow-lg shadow-pink-500"
             />
           </div>
