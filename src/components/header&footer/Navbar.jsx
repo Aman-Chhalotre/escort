@@ -2,6 +2,7 @@ import { Box, Drawer } from "@mui/material";
 import { useState } from "react";
 import { FaWhatsapp, FaTelegramPlane, FaYoutube } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
+import logo from "../../../public/images/logo.png"
 
 import { Link, NavLink } from "react-router-dom";
 import Breadcrumb from "../BreadCrumb";
@@ -49,7 +50,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-[#9233eaea] px-4 py-8 rounded-lg flex items-center justify-between sticky top-0 z-30">
+      <nav className="bg-[#9233eaea] px-4 py-2 rounded-lg flex items-center justify-between sticky top-0 z-30">
         <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
           <Box
             sx={{ width: 300, height: "100%", background: "#300354" }}
@@ -82,7 +83,7 @@ const Navbar = () => {
           className="h-12 w-auto"
         /> */}
           <NavLink to={"/"} className="text-xl font-bold text-red-500">
-            Escort Palma
+            <img src={logo} alt=""  className="sm:h-20 h-16 rounded-lg"/>
           </NavLink>
         </div>
 
