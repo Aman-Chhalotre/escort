@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from "../../../public/images/logo.png"
 
 function Footer() {
   return (
@@ -7,7 +8,7 @@ function Footer() {
       <div className="container mx-auto px-5 grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* Logo & Address */}
         <div>
-          <h2 className="text-red-500 text-2xl font-bold">ESCORT PALMA</h2>
+          <img src={logo} alt=""  className="sm:h-24 h-20 rounded-lg"/>
           <p className="mt-3 text-sm">
           PALMA'S #1 ESCORT AGENCY OFFERS HIGH-CLASS FEMALE ESCORTS FOR ANY OCCASION,
             AVAILABLE 24/7 TO FULFILL YOUR DESIRES WITH UNRIVALED ELEGANCE.
